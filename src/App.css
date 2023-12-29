@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background: linear-gradient(to right, #2f7336, #aa3a38);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main{
+  height: 70vh;
+  width: 60vw;
+  background: white;
+  margin-top: 15vh;
+  margin-left: 20vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1{
+  padding-top: 20vh;
+  padding-left: 15vw;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+h2{
+  padding-top: 3vh;
+  padding-left: 15vw;
+  font-size: 35px;
+  font-weight: 400;
+  color: rgb(117, 109, 109);
+}
+
+.demo{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.calculate input{
+  margin-left: 15vw;
+  margin-top: 3vh;
+  height: 7vh;
+  width: 10vw;
+  font-size: 20px;
+}
+
+.reset button{
+  margin-top: 3vh;
+  background: #4b7bec;
   color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  height: 7vh;
+  width: 9vw;
 }
 
-.App-link {
-  color: #61dafb;
+.reset .btn{
+  width: 6vw;
+  margin-left: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result{
+  margin-left: 15vw;
+  font-size: 28px;
+  margin-top: 20px;
 }

@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [birthdate, setBirthdate] = useState('');
+  const [age, setAge] = useState(null);
+
+  const calculateAge = () => {
+    if (birthdate) {
+      const today = new Date();
+      const birthDate = new Date(birthdate);
+      const ageInMilliseconds = today - birthDate;
+      const ageInYears = Math.floor(ageInMilliseconds / (365.25 * 24 * 60 * 60 * 1000));
+      setAge(ageInYears);
+            
+    } else {
+      setAge(null);
+    }
+  };
+
+  const resetFields = () => {
+    setBirthdate('');
+    setAge(null);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className='main'>
+        <h1>Age Calculator</h1>
+        <h2>Date of Birth</h2>
+        <div className='demo'>
+          <div className='calculate'>
+            <input type='date' value={birthdate} onChange={(e) => setBirthdate(e.target.value)} />
+          </div>
+          <div className='reset'>
+            <button type='btn' onClick={calculateAge}>Calculate Age</button>
+            <button type='btn' className='btn' onClick={resetFields}>Reset</button>
+          </div>
+        </div>
+        {age !== null && (
+          <div className='result'>
+            <p>Your age is: {age} years</p>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
